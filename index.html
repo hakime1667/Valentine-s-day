@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentino con Amal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="intro" class="page">
+            <h1>Ciao amore, pensavi davvero che il nostro primo San Valentino insieme sarebbe stato banale? E invece no! Ti sbagli! Ma per scoprirlo schiaccia il tasto riportato sotto.</h1>
+            <button class="start-btn" onclick="navigate('home')">START</button>
+        </div>
+        
+        <div id="home" class="page hidden">
+            <h1>Prima partiamo da una domanda molto semplice. Per il 14 febbraio, hai già degli impegni?</h1>
+            <button onclick="navigate('yes1')">Sì</button>
+            <button onclick="navigate('no1')">No</button>
+        </div>
+
+        <div id="yes1" class="page hidden">
+            <h1>Spero che questo impegno includa me, altrimenti lo devi annullare. Ho preparato una serata speciale per te. La vuoi scoprire?</h1>
+            <button onclick="navigate('yes2')">Sì</button>
+            <button onclick="navigate('no2')">No</button>
+        </div>
+
+        <div id="no1" class="page hidden">
+            <h1>Bene! Allora non prendere impegni che ho preparato una serata speciale per te. La vuoi scoprire?</h1>
+            <button onclick="navigate('yes2')">Sì</button>
+            <button onclick="navigate('no2')">No</button>
+        </div>
+
+        <div id="no2" class="page hidden">
+            <h1>Ne sei proprio sicura??</h1>
+            <button onclick="navigate('yes2')">No</button>
+            <button onclick="navigate('no2')">Sì</button>
+        </div>
+
+        <div id="yes2" class="page hidden">
+            <h1>Ti aspetta una serata magica con tanti ricordi indimenticabili dove questo piccolo puzzle è solo l'inizio. Ma partiamo dalle basi: Cosa vuoi mangiare?</h1>
+            <button onclick="navigate('food', 'Pizza')">Pizza</button>
+            <button onclick="navigate('food', 'Lasagna')">Lasagna</button>
+            <button onclick="navigate('food', 'Pasta')">Pasta</button>
+            <button onclick="navigate('food', 'Carne')">Carne</button>
+        </div>
+
+        <div id="food" class="page hidden">
+            <h1>Con cosa vorresti accompagnare il tuo pasto?</h1>
+            <button onclick="navigate('drink', 'Estathé alla pesca')">Estathé (ovviamente) alla pesca</button>
+            <button onclick="navigate('drink', 'Champagne analcolico')">Champagne (ovviamente analcolico, cioè va bene tutto ma non siamo ihud)</button>
+        </div>
+
+        <div id="drink" class="page hidden">
+            <h1>Mentre per il post serata cosa ti piacerebbe fare?</h1>
+            <button onclick="navigate('post', 'Bowling')">Bowling</button>
+            <button onclick="navigate('post', 'Cinema')">Cinema</button>
+            <button onclick="navigate('post', 'Serata giochi in casa')">Serata giochi in casa</button>
+        </div>
+
+        <div id="post" class="page hidden">
+            <h1>Perfetto! Adesso che ho tutti i dettagli per la nostra serata non ti resta che inviarmi il recap delle risposte schiacciando il tasto "Invia Risposte" e prepararti per una serata magica ricca di emozioni e tante sorprese. A presto!</h1>
+            <button onclick="sendEmail()">Invia Risposte</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
