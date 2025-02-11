@@ -30,7 +30,7 @@ Con affetto,
 L'amore della tua vita
 ${sessionStorage.getItem('hakime1667')}`;
 
-    window.open(`mailto:hakime1667@gmail.com?subject=Serata Speciale di San Valentino&body=${encodeURIComponent(emailBody)}`);
+    window.open(`mailto:azinezine@deloitte.it?subject=Serata Speciale di San Valentino&body=${encodeURIComponent(emailBody)}`);
 }
 
 // Initialize the first page
