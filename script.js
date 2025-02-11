@@ -16,15 +16,18 @@ function sendEmail() {
 
     const emailBody = `Ciao Amore,
     
-Sei l'uomo che tutte le donne desiderano, ma che te lo dico a fare. Tanto già lo sai. 
+Sei l'uomo che tutte le donne desiderano su questo pianeta, ma che te lo dico a fare. Tanto già lo sai. 
+
 Ecco le mie scelte per la nostra serata magica:
+
 - Cibo: ${food}
 - Bevanda: ${drink}
 - Attività post serata: ${post}
 
-Non vedo l'ora di scoprire cosa ha preparato per me e di passare questa serata magica con te!
+Non vedo l'ora di scoprire cosa hai preparato per me e di passare questa serata magica con te!
 
 Con affetto,
+L'amore della tua vita
 ${sessionStorage.getItem('hakime1667')}`;
 
     window.open(`mailto:hakime1667@gmail.com?subject=Serata Speciale di San Valentino&body=${encodeURIComponent(emailBody)}`);
