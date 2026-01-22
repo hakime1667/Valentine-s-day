@@ -58,18 +58,17 @@ function forcedYes() {
 
 function sendEmail(finalAnswer) {
     const subject = encodeURIComponent("San Valentino – Atto II 💕");
-    let body = "Rajli l3ziz, 
-        
-        "Anche questa volta ti sei superato. Ecco a te il riepilogo risposte:\n\n";
+
+    let body = "Rajli l3ziz,\n\n";
+    body += "Anche questa volta ti sei superato. Ecco a te il riepilogo risposte:\n\n";
 
     for (let key in answers) {
         body += `${key}: ${answers[key]}\n`;
     }
 
-    body += `\nRisposta finale: ${finalAnswer}`;
-
-    "Valentina oggi e per sempre ❤️"
-    "Tua moglie"
+    body += `\nRisposta finale: ${finalAnswer}\n\n`;
+    body += "Valentina oggi e per sempre ❤️\n";
+    body += "Tua moglie";
 
     window.location.href =
         `mailto:hakime1667@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
