@@ -8,18 +8,19 @@
 </head>
 <body>
     <div id="app">
+
         <!-- INTRO -->
         <div id="intro" class="page">
             <h1>Un anno fa, per la prima volta mi hai detto “Ti amo” inciso su un braccialetto che non ho più tolto...</h1>
             <button onclick="next('q1')">CONTINUA</button>
         </div>
-        
+
         <!-- DOMANDA 1 -->
         <div id="q1" class="page hidden">
             <h1>Quando pensi a quel momento, cosa senti dentro?</h1>
-            <button onclick="answer('q1', 'calore')">Un calore che non svanisce</button>
-            <button onclick="answer('q1', 'gratitudine')">Gratitudine per ogni secondo</button>
-            <button onclick="answer('q1', 'fortuna')">Fortuna di averti</button>
+            <button onclick="answer('q1', 'Un calore che non svanisce')">Un calore che non svanisce</button>
+            <button onclick="answer('q1', 'Gratitudine per ogni secondo')">Gratitudine per ogni secondo</button>
+            <button onclick="answer('q1', 'Fortuna di averti')">Fortuna di averti</button>
             <h1>Oppure scrivilo con parole tue 💌</h1>
             <input type="text" id="q1input" placeholder="Scrivi qui..." />
             <button onclick="answerFromInput('q1')">Continua</button>
@@ -28,10 +29,10 @@
         <!-- DOMANDA 2 -->
         <div id="q2" class="page hidden">
             <h1>Il nostro primo San Valentino da sposati: come lo immagini?</h1>
-            <button onclick="answer('q2', 'intimo')">Intimo e speciale</button>
-            <button onclick="answer('q2', 'romantico')">Romantico e profondo</button>
-            <button onclick="answer('q2', 'vero')">Vero, senza artifici</button>
-            <h1>Accetto anche altre proposte </h1>
+            <button onclick="answer('q2', 'Intimo e speciale')">Intimo e speciale</button>
+            <button onclick="answer('q2', 'Romantico e profondo')">Romantico e profondo</button>
+            <button onclick="answer('q2', 'Vero, senza artifici')">Vero, senza artifici</button>
+            <h1>Accetto anche altre proposte 💌</h1>
             <input type="text" id="q2input" placeholder="Scrivi qui..." />
             <button onclick="answerFromInput('q2')">Continua</button>
         </div>
@@ -39,10 +40,10 @@
         <!-- DOMANDA 3 -->
         <div id="q3" class="page hidden">
             <h1>Se potessi riassumere questo anno in una parola, quale sarebbe?</h1>
-            <button onclick="answer('q3', 'amore')">Amore</button>
-            <button onclick="answer('q3', 'crescita')">Crescita</button>
-            <button onclick="answer('q3', 'avventura')">Avventura</button>
-            <h1>Oppure....</h1>
+            <button onclick="answer('q3', 'Amore')">Amore</button>
+            <button onclick="answer('q3', 'Crescita')">Crescita</button>
+            <button onclick="answer('q3', 'Avventura')">Avventura</button>
+            <h1>Oppure con parole tue 💌</h1>
             <input type="text" id="q3input" placeholder="Scrivi qui..." />
             <button onclick="answerFromInput('q3')">Continua</button>
         </div>
@@ -58,15 +59,16 @@
 
         <!-- PAGINA NO -->
         <div id="noPage" class="page hidden">
-             <h1>Lo sapevo che saresti arrivata qui.</h1>
-             <h1>Dai bla bsalat e torna indietro tberhich dial walo 😌</h1>
-             <button onclick="forcedYes()">E va bene, sarò la tua Valentina oggi e per sempre</button>
+            <h1>Lo sapevo che saresti arrivata qui.</h1>
+            <h1>Dai bla bsalat e torna indietro. Tbarhich dial walo 😌</h1>
+            <button onclick="forcedYes()">E va bene, sarò la tua Valentina oggi e per sempre</button>
         </div>
 
         <!-- RISULTATO -->
         <div id="result" class="page hidden">
             <h1 id="resultText"></h1>
         </div>
+
     </div>
 
     <script src="script.js"></script>
