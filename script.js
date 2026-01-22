@@ -1,3 +1,4 @@
+// Oggetto per salvare tutte le risposte
 const answers = {};
 
 // Nasconde tutte le pagine
@@ -18,7 +19,7 @@ function next(pageId) {
     showPage(pageId);
 }
 
-// Salva risposta e passa alla domanda successiva
+// Salva risposta da pulsante e passa alla prossima domanda
 function answer(questionId, value) {
     answers[questionId] = value;
 
@@ -28,6 +29,19 @@ function answer(questionId, value) {
         document.getElementById('finalText').innerText = 'oggi e per sempre';
         showPage('final');
     }
+}
+
+// Salva risposta scritta e passa alla prossima domanda
+function answerFromInput(questionId) {
+    const input = document.getElementById(questionId + "input");
+    const value = input.value.trim();
+
+    if (value === "") {
+        alert("Scrivi qualcosa prima di continuare 💕");
+        return;
+    }
+
+    answer(questionId, value);
 }
 
 // Risposta finale SÌ
@@ -54,16 +68,18 @@ function forcedYes() {
 // Invio mail riepilogativa
 function sendEmail(finalAnswer) {
     const subject = encodeURIComponent("San Valentino – Atto II 💕");
-    let body = "Rajli l3ziz, anche quest'anno sei stato fantastico. Ecco a te il riepilogo delle mie risposte:\n\n";
+    let body = "Rajli l3ziz,
+        'Anche quest anno sei stato fantastico.
+        'Ecco il riepilogo delle mie risposte:\n\n";
 
     for (let key in answers) {
         body += `${key}: ${answers[key]}\n`;
     }
 
     body += `\nRisposta finale: ${finalAnswer}`;
-    
-    `Valentina oggi e per sempre ❤️`
+    'Voglio essere la tua Valentina oggi e per sempre 💕';
 
+    // apre il client di posta con mailto
     window.location.href =
         `mailto:hakime1667@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
 }
