@@ -69,6 +69,7 @@ function forcedYes() {
 function sendEmail(finalAnswer) {
     const subject = encodeURIComponent("San Valentino – Atto II 💕");
     let body = "Rajli l3ziz,
+        
         'Anche quest anno sei stato fantastico.
         'Ecco il riepilogo delle mie risposte:\n\n";
 
@@ -78,7 +79,8 @@ function sendEmail(finalAnswer) {
 
     body += `\nRisposta finale: ${finalAnswer}`;
    
-    'Voglio essere la tua Valentina oggi e per sempre 💕';
+    'Voglio essere la tua Valentina oggi e per sempre 💕
+     'Tua Moglie';
 
     // apre il client di posta con mailto
     window.location.href =
