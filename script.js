@@ -1,55 +1,69 @@
-const state = {};
+const answers = {};
 
-function show(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+// Nasconde tutte le pagine
+function hideAllPages() {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.add('hidden');
+    });
+}
+
+// Mostra una pagina specifica
+function showPage(id) {
+    hideAllPages();
     document.getElementById(id).classList.remove('hidden');
 }
 
-function next(nextId) {
-    show(nextId);
+// Pulsante CONTINUA iniziale
+function next(pageId) {
+    showPage(pageId);
 }
 
-function answer(question, value) {
-    state[question] = value;
+// Salva risposta e passa alla domanda successiva
+function answer(questionId, value) {
+    answers[questionId] = value;
 
-    if (question === 'q1') next('q2');
-    else if (question === 'q2') next('q3');
-    else if (question === 'q3') next('final');
+    if (questionId === 'q1') showPage('q2');
+    else if (questionId === 'q2') showPage('q3');
+    else if (questionId === 'q3') {
+        document.getElementById('finalText').innerText = 'oggi e per sempre';
+        showPage('final');
+    }
 }
 
+// Risposta finale SÌ
 function finalYes() {
-    sendEmail("SÌ diretto");
+    sendEmail("SÌ");
+    document.getElementById('resultText').innerText =
+        "Hai detto SÌ. E io ti sceglierei altre mille volte.";
+    showPage('result');
 }
 
+// Risposta finale NO
 function finalNo() {
-    show('noPage');
+    showPage('noPage');
 }
 
+// NO → SÌ forzato 😌
 function forcedYes() {
-    sendEmail("SÌ dopo ripensamento");
+    sendEmail("SÌ (dopo ripensamento 😌)");
+    document.getElementById('resultText').innerText =
+        "Lo sapevo. Oggi, domani, per sempre.";
+    showPage('result');
 }
 
-function sendEmail(type) {
-    const subject = encodeURIComponent("San Valentino – Atto II 💍");
-    const body = encodeURIComponent(
-        `Rajli l3ziz,
+// Invio mail riepilogativa
+function sendEmail(finalAnswer) {
+    const subject = encodeURIComponent("San Valentino – Atto II 💕");
+    let body = "Rajli l3ziz, anche quest'anno sei stato fantastico. Ecco a te il riepilogo delle mie risposte:\n\n";
 
-        Anche quest'anno sei stato fantastico. Ecco a te il riepilogo delle mie risposte:\n\n` +
-        `Domanda 1: ${state.q1}\n` +
-        `Domanda 2: ${state.q2}\n` +
-        `Domanda 3: ${state.q3}\n\n` +
-        `Risposta finale: ${type}\n\n` +
-        
-        `Valentina oggi e per sempre ❤️`
-    );
+    for (let key in answers) {
+        body += `${key}: ${answers[key]}\n`;
+    }
 
-    window.location.href = `mailto:hakime1667@gmail.com?subject=${subject}&body=${body}`;
+    body += `\nRisposta finale: ${finalAnswer}`;
+    
+    `Valentina oggi e per sempre ❤️`
 
-    showResult("Ora non ti resta che prepararti… io ho già detto sì a te. ❤️");
+    window.location.href =
+        `mailto:hakime1667@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
 }
-
-function showResult(message) {
-    show('result');
-    document.getElementById('resultText').innerText = message;
-}
-
