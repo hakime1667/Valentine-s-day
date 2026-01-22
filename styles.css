@@ -1,50 +1,55 @@
 body {
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  font-family: 'Montserrat', sans-serif;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #4a1c2f;
+    text-align: center;
 }
 
-.card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+#app {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  color: #c0392b;
+/* Ogni "pagina" */
+.page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Nasconde le pagine non attive */
+.hidden {
+    display: none;
 }
 
 button {
-  display: block;
-  margin: 15px auto;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 30px;
-  background: #e74c3c;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+    padding: 14px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background-color: #b8325a;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 button:hover {
-  background: #c0392b;
-  transform: scale(1.05);
+    background-color: #a1264b;
+    transform: scale(1.05);
 }
 
-.fade-in {
-  animation: fade 1.5s ease;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
