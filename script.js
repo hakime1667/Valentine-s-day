@@ -1,25 +1,20 @@
-// Oggetto per salvare tutte le risposte
 const answers = {};
 
-// Nasconde tutte le pagine
 function hideAllPages() {
     document.querySelectorAll('.page').forEach(page => {
         page.classList.add('hidden');
     });
 }
 
-// Mostra una pagina specifica
 function showPage(id) {
     hideAllPages();
     document.getElementById(id).classList.remove('hidden');
 }
 
-// Pulsante CONTINUA iniziale
 function next(pageId) {
     showPage(pageId);
 }
 
-// Salva risposta da pulsante e passa alla prossima domanda
 function answer(questionId, value) {
     answers[questionId] = value;
 
@@ -31,7 +26,6 @@ function answer(questionId, value) {
     }
 }
 
-// Salva risposta scritta e passa alla prossima domanda
 function answerFromInput(questionId) {
     const input = document.getElementById(questionId + "input");
     const value = input.value.trim();
@@ -44,7 +38,6 @@ function answerFromInput(questionId) {
     answer(questionId, value);
 }
 
-// Risposta finale SÌ
 function finalYes() {
     sendEmail("SÌ");
     document.getElementById('resultText').innerText =
@@ -52,12 +45,10 @@ function finalYes() {
     showPage('result');
 }
 
-// Risposta finale NO
 function finalNo() {
     showPage('noPage');
 }
 
-// NO → SÌ forzato 😌
 function forcedYes() {
     sendEmail("SÌ (dopo ripensamento 😌)");
     document.getElementById('resultText').innerText =
@@ -65,24 +56,21 @@ function forcedYes() {
     showPage('result');
 }
 
-// Invio mail riepilogativa
 function sendEmail(finalAnswer) {
     const subject = encodeURIComponent("San Valentino – Atto II 💕");
-    let body = "Rajli l3ziz,
+    let body = "Rajli l3ziz, 
         
-        'Anche quest anno sei stato fantastico.
-        'Ecco il riepilogo delle mie risposte:\n\n";
+        "Anche questa volta ti sei superato. Ecco a te il riepilogo risposte:\n\n";
 
     for (let key in answers) {
         body += `${key}: ${answers[key]}\n`;
     }
 
     body += `\nRisposta finale: ${finalAnswer}`;
-   
-    'Voglio essere la tua Valentina oggi e per sempre 💕
-     'Tua Moglie';
 
-    // apre il client di posta con mailto
+    "Valentina oggi e per sempre ❤️"
+    "Tua moglie"
+
     window.location.href =
         `mailto:hakime1667@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
 }
