@@ -60,7 +60,7 @@ function sendEmail(finalAnswer) {
     const subject = encodeURIComponent("San Valentino – Atto II 💕");
 
     let body = "Rajli l3ziz,\n\n";
-    body += "Anche questa volta ti sei superato. Ecco a te il riepilogo risposte:\n\n";
+    body += "Anche questa volta ti sei superato. Ecco a te il riepilogo delle mie risposte:\n\n";
 
     for (let key in answers) {
         body += `${key}: ${answers[key]}\n`;
