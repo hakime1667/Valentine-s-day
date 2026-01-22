@@ -77,6 +77,7 @@ function sendEmail(finalAnswer) {
     }
 
     body += `\nRisposta finale: ${finalAnswer}`;
+   
     'Voglio essere la tua Valentina oggi e per sempre 💕';
 
     // apre il client di posta con mailto
