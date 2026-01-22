@@ -16,10 +16,13 @@
         
         <!-- DOMANDA 1 -->
         <div id="q1" class="page hidden">
-            <h1>Quando penso a quel momento, cosa senti dentro?</h1>
+            <h1>Quando pensi a quel momento, cosa senti dentro?</h1>
             <button onclick="answer('q1', 'calore')">Un calore che non svanisce</button>
             <button onclick="answer('q1', 'gratitudine')">Gratitudine per ogni secondo</button>
             <button onclick="answer('q1', 'fortuna')">Fortuna di averti</button>
+            <p>Oppure scrivilo con le tue parole 💌</p>
+            <input type="text" id="q1input" placeholder="Scrivi qui..." />
+            <button onclick="answerFromInput('q1')">Continua</button>
         </div>
 
         <!-- DOMANDA 2 -->
@@ -28,6 +31,9 @@
             <button onclick="answer('q2', 'intimo')">Intimo e speciale</button>
             <button onclick="answer('q2', 'romantico')">Romantico e profondo</button>
             <button onclick="answer('q2', 'vero')">Vero, senza artifici</button>
+            <p>Accetto anche altre proposte </p>
+            <input type="text" id="q1input" placeholder="Scrivi qui..." />
+            <button onclick="answerFromInput('q2')">Continua</button>
         </div>
 
         <!-- DOMANDA 3 -->
@@ -36,12 +42,15 @@
             <button onclick="answer('q3', 'amore')">Amore</button>
             <button onclick="answer('q3', 'crescita')">Crescita</button>
             <button onclick="answer('q3', 'avventura')">Avventura</button>
+            <p>Oppure con parole tue</p>
+            <input type="text" id="q1input" placeholder="Scrivi qui..." />
+            <button onclick="answerFromInput('q3')">Continua</button>
         </div>
 
         <!-- FINALE -->
         <div id="final" class="page hidden">
             <h1>So che il nostro amore è reale, profondo e concreto...</h1>
-            <p>Ora voglio chiederti qualcosa di speciale:</p>
+            <h1>Ora voglio chiederti qualcosa di speciale:</h1>
             <h2>Vuoi essere la mia Valentina <span id="finalText"></span>?</h2>
             <button onclick="finalYes()">SÌ</button>
             <button onclick="finalNo()">NO</button>
